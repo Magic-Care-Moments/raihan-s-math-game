@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Number Game</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+<body>
+<div class="Container-fluid">
+  <h1 align="center">Raihan's Number Prediction Game</h1>
+	</div>	
+	<br>
+	
+<style>
+
+
+#number-form {
+  text-align: center;
+}
+
+input[type=number] {
+  margin: 10px;
+}
+	
+#result {
+  text-align: center;
+  font-size: 24px;
+}
+
+	</style>	
+	
+		
+	<form id="number-form">
+    <input type="number" id="number1" placeholder="Enter first number">
+    <input type="number" id="number2" placeholder="Enter second number">
+    <input type="number" id="prediction" placeholder="Your Prediction">
+    <button type="button" onclick="checkPrediction()">Check Result</button>
+  </form>
+  <div id="result"></div>
+		
+		
+		
+
+  
+  <script>
+function checkPrediction() {
+  // Get input values
+  const number1 = parseInt(document.getElementById('number1').value);
+  const number2 = parseInt(document.getElementById('number2').value);
+  const prediction = parseInt(document.getElementById('prediction').value);
+
+  // Calculate the sum
+  const sum = number1 + number2;
+
+  // Check if the prediction is correct
+  let resultMessage;
+  if (sum === prediction) {
+    resultMessage = "Well done! Your prediction is correct 🙂";
+  } else {
+    resultMessage = `Oops! The correct sum is ${sum}. Better luck next time 😞`;
+  }
+
+  // Display the result
+  document.getElementById('result').textContent = resultMessage;
+}
+
+ 
+</script>
+</body>
+</html>
+
